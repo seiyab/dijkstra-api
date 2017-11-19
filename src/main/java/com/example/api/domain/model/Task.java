@@ -1,10 +1,13 @@
 package com.example.api.domain.model;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.example.api.domain.model.compositekey.TaskId;
 
 import lombok.Data;
 
@@ -14,10 +17,13 @@ import lombok.Data;
 @Data
 public class Task {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long taskId;
-	private Integer arc;
-	private Integer abc;
-	private Character problem;
+	@EmbeddedId
+	private TaskId taskId;
+	
+	@ManyToOne
+	@JoinColumn(name="contest_id", insertable=false, updatable=false)
+	private Contest contest;
+	
+	@Column(name="url")
+	private String url;
 }
