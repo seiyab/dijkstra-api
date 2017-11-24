@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.api.domain.model.Task;
+import com.example.api.domain.model.compositekey.TaskId;
 import com.example.api.domain.repository.TaskRepository;
 
 @Service
@@ -15,11 +16,7 @@ public class TaskService {
 	@Autowired
 	TaskRepository taskRepository;
 	
-	public Task findOne(Long taskId) {
+	public Task findOne(TaskId taskId) {
 		return this.taskRepository.findOne(taskId);
-	}
-
-	public Task save(Task task) {
-		return this.taskRepository.save(task);
 	}
 }
