@@ -1,22 +1,34 @@
 package com.example.api.domain.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.example.api.domain.model.Label;
 import com.example.api.domain.model.Task;
-import com.example.api.domain.model.compositekey.TaskId;
+import com.example.api.domain.repository.LabelRepository;
 import com.example.api.domain.repository.TaskRepository;
+import com.example.api.domain.service.response.TaskResponse;
 
 @Service
 @Transactional
 public class TaskService {
-	
-	@Autowired
-	TaskRepository taskRepository;
-	
-	public Task findOne(TaskId taskId) {
-		return this.taskRepository.findOne(taskId);
-	}
+
+  @Autowired
+  TaskRepository taskRepository;
+
+  @Autowired
+  LabelRepository labelRepository;
+
+  public List<TaskResponse> findTasksByAlgorithmId(Integer algorithmId) {
+    List<Label> labels = this.labelRepository.findByAlgorithm_AlgorithmId(algorithmId);
+    List<Task> tasks = labels.stream().map(label -> label.getTask()).collect(Collectors.toList());
+    return tasks.stream().map(TaskService::task2TaskResponse).collect(Collectors.toList());
+  }
+
+  private static TaskResponse task2TaskResponse(Task task) {
+    return TaskResponse.builder().contest(task.getContest().getName())
+        .task(task.getTaskId().getTask()).url(task.getUrl()).build();
+  }
 }
