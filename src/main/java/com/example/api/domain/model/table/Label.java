@@ -1,4 +1,4 @@
-package com.example.api.domain.model;
+package com.example.api.domain.model.table;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

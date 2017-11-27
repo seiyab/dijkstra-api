@@ -5,11 +5,11 @@ import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.api.domain.model.Label;
-import com.example.api.domain.model.Task;
+import com.example.api.domain.model.json.TaskResponse;
+import com.example.api.domain.model.table.Label;
+import com.example.api.domain.model.table.Task;
 import com.example.api.domain.repository.LabelRepository;
 import com.example.api.domain.repository.TaskRepository;
-import com.example.api.domain.service.response.TaskResponse;
 
 @Service
 @Transactional

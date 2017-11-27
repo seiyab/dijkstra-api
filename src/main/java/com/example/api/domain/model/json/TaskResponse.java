@@ -1,4 +1,4 @@
-package com.example.api.domain.service.response;
+package com.example.api.domain.model.json;
 
 import lombok.Builder;
 import lombok.Value;
