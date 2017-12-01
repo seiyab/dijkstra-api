@@ -1,4 +1,4 @@
-package com.example.api.model.table;
+package com.projectdijkstra.api.model.table;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
