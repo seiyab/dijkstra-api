@@ -1,4 +1,4 @@
-package com.example.api.domain.model.table;
+package com.example.api.model.table;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import com.example.api.domain.model.table.compositekey.TaskId;
+import com.example.api.model.table.compositekey.TaskId;
 import lombok.Data;
 
 

@@ -1,4 +1,4 @@
-package com.example.api.domain.model.table.compositekey;
+package com.example.api.model.table.compositekey;
 
 import java.io.Serializable;
 

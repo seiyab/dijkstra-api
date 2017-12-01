@@ -1,4 +1,4 @@
-package com.example.api.domain.model.json;
+package com.example.api.model.json;
 
 import lombok.Builder;
 import lombok.Value;

@@ -1,15 +1,15 @@
-package com.example.api.domain.service;
+package com.example.api.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.api.domain.model.json.TaskResponse;
-import com.example.api.domain.model.table.Label;
-import com.example.api.domain.model.table.Task;
-import com.example.api.domain.repository.LabelRepository;
-import com.example.api.domain.repository.TaskRepository;
+import com.example.api.model.json.TaskResponse;
+import com.example.api.model.table.Label;
+import com.example.api.model.table.Task;
+import com.example.api.repository.LabelRepository;
+import com.example.api.repository.TaskRepository;
 
 @Service
 @Transactional
