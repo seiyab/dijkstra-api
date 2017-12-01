@@ -24,11 +24,6 @@ public class TaskService {
   public List<TaskResponse> findTasksByAlgorithmId(Integer algorithmId) {
     List<Label> labels = this.labelRepository.findByAlgorithm_AlgorithmId(algorithmId);
     List<Task> tasks = labels.stream().map(label -> label.getTask()).collect(Collectors.toList());
-    return tasks.stream().map(TaskService::task2TaskResponse).collect(Collectors.toList());
-  }
-
-  private static TaskResponse task2TaskResponse(Task task) {
-    return TaskResponse.builder().contest(task.getContest().getName())
-        .task(task.getTaskId().getTask()).url(task.getUrl()).build();
+    return tasks.stream().map(TaskResponse::of).collect(Collectors.toList());
   }
 }
