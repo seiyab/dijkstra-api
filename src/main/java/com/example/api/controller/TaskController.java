@@ -1,4 +1,4 @@
-package com.example.api.application.controller;
+package com.example.api.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
