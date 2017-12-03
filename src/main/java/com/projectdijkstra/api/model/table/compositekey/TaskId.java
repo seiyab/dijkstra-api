@@ -1,4 +1,4 @@
-package com.example.api.model.table.compositekey;
+package com.projectdijkstra.api.model.table.compositekey;
 
 import java.io.Serializable;
 

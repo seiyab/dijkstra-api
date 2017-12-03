@@ -1,4 +1,4 @@
-package com.example.api.controller;
+package com.projectdijkstra.api.controller;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package com.example.api.model.json;
+package com.projectdijkstra.api.model.json;
 
-import com.example.api.model.table.Task;
+import com.projectdijkstra.api.model.table.Task;
 import lombok.Builder;
 import lombok.Value;
 
