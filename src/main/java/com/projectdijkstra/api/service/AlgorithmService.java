@@ -18,4 +18,8 @@ public class AlgorithmService {
         .collect(Collectors.toList());
   }
 
+  public AlgorithmResponse findByAlgorithmId(Integer algorithmId) {
+    return AlgorithmResponse.of(algorithmRepository.findByAlgorithmId(algorithmId));
+  }
+
 }
