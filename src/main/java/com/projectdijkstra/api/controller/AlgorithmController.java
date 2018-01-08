@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.projectdijkstra.api.model.json.AlgorithmResponse;
 import com.projectdijkstra.api.service.AlgorithmService;
@@ -18,5 +19,10 @@ public class AlgorithmController {
   @GetMapping("/list")
   public List<AlgorithmResponse> list() {
     return algorithmService.findAllAlgorithms();
+  }
+
+  @GetMapping("")
+  public AlgorithmResponse algorithm(@RequestParam("algorithm_id") Integer algorithmId) {
+    return algorithmService.findByAlgorithmId(algorithmId);
   }
 }
