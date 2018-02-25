@@ -1,5 +1,5 @@
 shared:
-  image: openjdk:alpine
+  image: openjdk:latest
 jobs:
   test:
     requires: [~pr]
