@@ -1,0 +1,7 @@
+shared:
+  image: openjdk:alpine
+jobs:
+  test:
+    requires: [~pr]
+    steps:
+      - test: ./mvnw clean test
