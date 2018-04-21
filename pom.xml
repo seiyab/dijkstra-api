@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.projectdijkstra</groupId>
-	<artifactId>api</artifactId>
+	<artifactId>dijkstra-api</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
@@ -63,7 +63,7 @@
 	</dependencies>
 
 	<build>
-        <finalName>${project.artifactid}</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
